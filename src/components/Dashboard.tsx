@@ -6,10 +6,13 @@ const VideoSection: React.FC = () => {
   return (
     <div className="dashboard-results-section">
       <div className="video-container" style={{ padding: '5px' }}>
-        <img
-          src="./vid1.gif"
-          alt="Soccer Analytics Computer Vision Demo"
+        <video
+          src="./vid1.webm"
           className="soccer-video"
+          autoPlay
+          loop
+          muted
+          playsInline
           style={{
             width: '100%',
             maxWidth: '60%',

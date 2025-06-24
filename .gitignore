@@ -135,5 +135,4 @@ dist
 .yarn/install-state.gz
 .pnp.*
 *.mp4
-*.gif
 .DS_Store
