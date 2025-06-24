@@ -14,6 +14,13 @@
   overflow: hidden;
   transition: all 0.3s ease-in-out;
   
+  &.video-wrapper {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    margin-top: 0px;
+  }
+  
   // Responsive border radius adjustments
   @media (max-width: $mobile) {
     border-radius: $border-radius-sm;
@@ -27,6 +34,10 @@
 .dashboard-container {
   padding: $spacing-lg;
   transition: padding 0.3s ease-in-out;
+  
+  &.video-container-custom {
+    padding: 10px 10px 0px 10px;
+  }
   
   // Responsive padding handled in _responsive.scss for specific breakpoints
   
@@ -98,7 +109,24 @@
 }
 
 .dashboard-results-section {
-  margin-top: $spacing-md;
+  margin-top: 0;
+}
+
+.video-container {
+  padding: 0;
+  margin: 0;
+}
+
+.soccer-video {
+  width: 100%;
+  max-width: 85%;
+  height: auto;
+  max-height: 60vh;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  display: block;
+  margin: 0 auto;
+  object-fit: cover;
 }
 
 .summary-text {

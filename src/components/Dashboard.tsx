@@ -5,24 +5,8 @@ import '../styles/main.scss';
 const VideoSection: React.FC = () => {
   return (
     <div className="dashboard-results-section">
-      <div className="video-container" style={{ padding: '5px' }}>
-        <video
-          src="./vid1.webm"
-          className="soccer-video"
-          autoPlay
-          loop
-          muted
-          playsInline
-          style={{
-            width: '100%',
-            maxWidth: '60%',
-            height: 'auto',
-            borderRadius: '8px',
-            border: '1px solid rgba(255, 255, 255, 0.8)',
-            display: 'block',
-            margin: '0 auto',
-          }}
-        />
+      <div className="video-container">
+        <video src="./vid1.webm" className="soccer-video" autoPlay loop muted playsInline />
       </div>
 
       <div className="action-buttons">
@@ -73,11 +57,8 @@ const Dashboard: React.FC = () => {
         <p className="subtitle">Elite Analytics for All. Powered by AI Vision.</p>
       </div>
 
-      <div
-        className="dashboard-container-wrapper"
-        style={{ background: 'transparent', border: 'none', boxShadow: 'none' }}
-      >
-        <div className="dashboard-container" style={{ padding: '10px' }}>
+      <div className="dashboard-container-wrapper video-wrapper">
+        <div className="dashboard-container video-container-custom">
           <div className="dashboard-content">
             <VideoSection />
           </div>
