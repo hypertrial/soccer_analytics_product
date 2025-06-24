@@ -1,0 +1,159 @@
+// =============================================================================
+// LAYOUT COMPONENTS - Enhanced for better responsive transitions
+// =============================================================================
+
+@use 'variables' as *;
+
+.home-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: $spacing-lg;
+  transition: padding 0.3s ease-in-out;
+  
+  // Remove top padding when page has disclaimer
+  &.has-page-disclaimer {
+    padding-top: 0;
+  }
+  
+  // Enhanced responsive container classes
+  &.home-container-tiny {
+    padding: $spacing-xs;
+    max-width: 100%;
+    
+    &.has-page-disclaimer {
+      padding-top: 0;
+    }
+  }
+  
+  &.home-container-small {
+    padding: $spacing-sm;
+    max-width: 100%;
+    
+    &.has-page-disclaimer {
+      padding-top: 0;
+    }
+  }
+  
+  &.home-container-mobile {
+    padding: $spacing-md;
+    max-width: 100%;
+    
+    &.has-page-disclaimer {
+      padding-top: 0;
+    }
+  }
+  
+  &.home-container-tablet {
+    padding: $spacing-md;
+    max-width: 1000px;
+    
+    &.has-page-disclaimer {
+      padding-top: 0;
+    }
+  }
+  
+  &.home-container-desktop-small {
+    padding: $spacing-lg;
+    max-width: 1200px;
+    
+    &.has-page-disclaimer {
+      padding-top: 0;
+    }
+  }
+}
+
+.microproducts-split-layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: $spacing-lg;
+  transition: gap 0.3s ease-in-out;
+  
+  @media (max-width: $tablet) {
+    grid-template-columns: 1fr;
+    gap: $spacing-md;
+  }
+}
+
+.resources-title {
+  text-align: center;
+  margin-bottom: $spacing-xl;
+  
+  .hypertrial-logo-link {
+    display: block;
+    margin: 0 auto $spacing-md auto;
+    width: fit-content;
+    transition: transform 0.3s ease-in-out;
+    
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+  
+  .hypertrial-logo {
+    height: 40px;
+    display: block;
+    transition: height 0.3s ease-in-out;
+  }
+  
+  h1 {
+    font-size: 3.2rem;
+    color: $white;
+    margin-bottom: $spacing-xs;
+    transition: font-size 0.3s ease-in-out;
+  }
+  
+  .subtitle {
+    font-size: 1.3rem;
+    color: $white;
+    opacity: 0.9;
+    margin-bottom: $spacing-sm;
+    font-weight: 400;
+    transition: font-size 0.3s ease-in-out;
+  }
+  
+  p {
+    font-size: 1.2rem;
+    color: $white;
+    transition: font-size 0.3s ease-in-out;
+  }
+}
+
+// Dashboard container wrapper improvements
+.dashboard-container-wrapper {
+  transition: all 0.3s ease-in-out;
+  
+  // Responsive margin adjustments
+  @media (max-width: $mobile) {
+    margin: 0 #{-$spacing-sm};
+  }
+  
+  @media (max-width: $tiny-mobile) {
+    margin: 0 #{-$spacing-xs};
+  }
+}
+
+.dashboard-container {
+  transition: padding 0.3s ease-in-out;
+}
+
+// Enhanced performance metric responsiveness
+.performance-metric-compact {
+  .performance-box-small {
+    transition: all 0.3s ease-in-out;
+    
+    // Better responsive scaling
+    @media (max-width: $tiny-mobile) {
+      margin: 0 auto;
+      width: calc(100% - #{$spacing-md});
+      min-width: 280px;
+      max-width: 400px;
+    }
+    
+    @media (min-width: #{$tiny-mobile + 1px}) and (max-width: $mobile) {
+      margin: 0 auto;
+      width: auto;
+      min-width: 350px;
+      max-width: 500px;
+    }
+  }
+} 
