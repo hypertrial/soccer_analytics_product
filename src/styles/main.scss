@@ -3,20 +3,22 @@
 // =============================================================================
 
 // Import variables and mixins first (order matters)
-@use 'variables' as *;
-@use 'mixins' as *;
+@use "variables" as *;
+@use "mixins" as *;
 
 // Import base styles
-@use 'base';
+@use "base";
 
 // Import layout components
-@use 'layout';
+@use "layout";
 
 // Import feature-specific styles
-@use 'dashboard';
-@use 'forms';
-@use 'tables';
-@use 'components';
+@use "dashboard";
+@use "forms";
+@use "tables";
+@use "components";
+@use "services";
+@use "services-faq";
 
 // Import responsive styles last
-@use 'responsive'; 
+@use "responsive";

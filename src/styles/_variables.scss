@@ -10,8 +10,8 @@ $success-color: #27ae60;
 $text-color: #1a1a1a;
 $text-muted: #666;
 $text-light: #444;
-$bg-color: #1E1E44;
-$white: #F2F4F8;
+$bg-color: #1e1e44;
+$white: #f2f4f8;
 $warning-bg: #d9efff;
 $warning-border: #d9efff;
 $warning-text: #000000;
@@ -29,6 +29,12 @@ $spacing-md: 0.9rem;
 $spacing-lg: 1.2rem;
 $spacing-xl: 1.5rem;
 
+// Section spacing - for consistent spacing between major sections
+$section-spacing: 3rem; // Standard spacing between sections
+$section-spacing-tablet: 2.5rem; // Tablet spacing
+$section-spacing-mobile: 2rem; // Mobile spacing
+$section-spacing-small: 1.5rem; // Small mobile spacing
+
 // Border radius
 $border-radius-sm: 8px;
 $border-radius-md: 12px;
@@ -40,4 +46,4 @@ $mobile: 768px;
 $tablet: 968px;
 $desktop-small: 1200px;
 $desktop-medium: 1400px;
-$desktop-large: 1600px; 
+$desktop-large: 1600px;

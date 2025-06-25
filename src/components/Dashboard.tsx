@@ -1,5 +1,7 @@
 import React from "react";
 import { useResponsive } from "../hooks/useResponsive";
+import { ComparisonSection, InstructorsSection } from "./Services";
+import ServicesFAQ from "./ServicesFAQ";
 import "../styles/main.scss";
 
 const VideoSection: React.FC = () => {
@@ -14,23 +16,6 @@ const VideoSection: React.FC = () => {
           muted
           playsInline
         />
-      </div>
-
-      <div className="action-buttons">
-        <a
-          href="https://github.com/hypertrial/soccer_analytics_product"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="action-button contribute-button"
-        >
-          Data & Tech Talent: Contribute
-        </a>
-        <a
-          href="mailto:team@hypertrial.ai"
-          className="action-button contact-button"
-        >
-          Clubs & Academies: Contact
-        </a>
       </div>
     </div>
   );
@@ -69,13 +54,20 @@ const Dashboard: React.FC = () => {
           />
         </a>
         <h1>Soccer Analytics</h1>
-        <p className="subtitle">If we can see it, we can analyze it.</p>
+        <p className="subtitle">If it's Visible, it's Measurable</p>
       </div>
 
       <div className="dashboard-container-wrapper video-wrapper">
         <div className="dashboard-container video-container-custom">
           <div className="dashboard-content">
             <VideoSection />
+            <div className="services-container">
+              <div className="services-content">
+                <ComparisonSection />
+                <InstructorsSection />
+                <ServicesFAQ />
+              </div>
+            </div>
           </div>
         </div>
       </div>

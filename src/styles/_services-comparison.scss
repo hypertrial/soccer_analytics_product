@@ -1,0 +1,440 @@
+// Services Comparison Section Styles - Following services.scss patterns
+
+@use "sass:color";
+@use "variables" as *; // Import variables for consistent spacing
+
+// ========================================
+// MIXINS (from services.scss)
+// ========================================
+@mixin card-base {
+  background: var(--card-bg);
+  border-radius: 12px;
+  border: 1px solid var(--card-border);
+  box-shadow: 0 4px 15px var(--shadow-primary);
+  // Performance optimizations
+  will-change: transform, box-shadow, background;
+  transform: translateZ(0); // Force hardware acceleration
+  contain: layout style paint; // Optimize rendering containment
+  // Replace backdrop-filter with optimized background
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: inherit;
+    z-index: -1;
+    pointer-events: none;
+  }
+
+  transition: all 0.3s ease;
+}
+
+@mixin card-hover {
+  @media (hover: hover) {
+    &:hover {
+      transform: translateZ(0) translateY(-3px); // Maintain hardware acceleration
+      box-shadow: 0 6px 25px var(--shadow-hover);
+      background: var(--card-bg-hover);
+
+      &::before {
+        background: rgba(255, 255, 255, 0.08);
+      }
+    }
+  }
+}
+
+@mixin responsive-font($base, $mobile: null) {
+  font-size: $base;
+  @if $mobile {
+    @media (max-width: 768px) {
+      font-size: $mobile;
+    }
+  }
+}
+
+// ========================================
+// COMPARISON SECTION
+// ========================================
+.comparison-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  contain: layout; // Optimize layout containment
+}
+
+.comparison-table {
+  // Move all declarations before mixins that contain nested rules
+  padding: 0;
+  overflow: hidden;
+  will-change: transform, box-shadow, background;
+  transform: translateZ(0);
+  contain: layout style paint;
+  margin-bottom: 0; // Remove individual margins, rely on parent gap
+
+  @include card-base;
+  @include card-hover;
+}
+
+.comparison-header {
+  display: grid;
+  grid-template-columns: 1.5fr repeat(4, 1.2fr);
+  background: linear-gradient(
+    135deg,
+    #6d28d9,
+    color.adjust(#6d28d9, $lightness: -10%)
+  );
+  color: white;
+  // Performance optimizations
+  will-change: auto;
+  transform: translateZ(0);
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1.2fr repeat(4, 1fr);
+  }
+
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr repeat(4, 0.9fr);
+  }
+}
+
+.feature-column-header,
+.program-column-header {
+  padding: 20px 16px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 0.8rem;
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+
+  &:last-child {
+    border-right: none;
+  }
+
+  @media (max-width: 768px) {
+    padding: 16px 12px;
+    font-size: 0.75rem;
+  }
+
+  @media (max-width: 480px) {
+    padding: 12px 8px;
+    font-size: 0.65rem;
+  }
+}
+
+.feature-column-header {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.comparison-row {
+  display: grid;
+  grid-template-columns: 1.5fr repeat(4, 1.2fr);
+  border-bottom: 1px solid var(--card-border);
+  transition: background-color 0.2s ease;
+  // Performance optimizations
+  will-change: background-color;
+  transform: translateZ(0);
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1.2fr repeat(4, 1fr);
+  }
+
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr repeat(4, 0.9fr);
+  }
+}
+
+.feature-cell {
+  padding: 20px 16px;
+  font-size: 1rem;
+  color: var(--text-primary);
+  font-weight: 500;
+  border-right: 1px solid var(--card-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  @media (max-width: 768px) {
+    padding: 16px 12px;
+    font-size: 0.875rem;
+  }
+
+  @media (max-width: 480px) {
+    padding: 12px 8px;
+    font-size: 0.75rem;
+  }
+}
+
+.program-cell {
+  padding: 20px 16px;
+  border-right: 1px solid var(--card-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:last-child {
+    border-right: none;
+  }
+
+  @media (max-width: 768px) {
+    padding: 16px 12px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 12px 8px;
+  }
+}
+
+.comparison-text {
+  font-size: 0.75rem;
+  color: var(--text-primary);
+  font-weight: 400;
+  text-align: center;
+  line-height: 1.2;
+
+  .price-bold {
+    font-weight: 700;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 0.65rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 0.6rem;
+  }
+}
+
+.comparison-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.125rem;
+  // Performance optimizations
+  will-change: transform, background, box-shadow;
+  transform: translateZ(0);
+  transition: all 0.2s ease;
+
+  &.check {
+    background: linear-gradient(135deg, #22c55e, #16a34a);
+    color: white;
+    box-shadow: 0 2px 8px rgba(34, 197, 94, 0.3);
+
+    &:hover {
+      transform: translateZ(0) scale(1.1);
+      box-shadow: 0 4px 12px rgba(34, 197, 94, 0.4);
+    }
+  }
+
+  &.cross {
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+    color: white;
+    box-shadow: 0 2px 8px rgba(239, 68, 68, 0.3);
+
+    &:hover {
+      transform: translateZ(0) scale(1.1);
+      box-shadow: 0 4px 12px rgba(239, 68, 68, 0.4);
+    }
+  }
+
+  @media (max-width: 768px) {
+    width: 28px;
+    height: 28px;
+    font-size: 1rem;
+  }
+
+  @media (max-width: 480px) {
+    width: 24px;
+    height: 24px;
+    font-size: 0.875rem;
+  }
+}
+
+.comparison-actions {
+  display: grid;
+  grid-template-columns: 1.5fr repeat(4, 1.2fr);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.05),
+    rgba(255, 255, 255, 0.02)
+  );
+  border-top: 2px solid #6d28d9;
+  // Performance optimizations
+  will-change: auto;
+  transform: translateZ(0);
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1.2fr repeat(4, 1fr);
+  }
+
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr repeat(4, 0.9fr);
+  }
+}
+
+.action-spacer {
+  // Empty spacer for the first column
+}
+
+.action-cell {
+  padding: 24px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media (max-width: 768px) {
+    padding: 20px 12px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 16px 8px;
+  }
+}
+
+.comparison-button {
+  background: #6d28d9;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.875rem;
+  padding: 12px 20px;
+  transition: all 0.3s ease;
+  min-width: 100px;
+  // Performance optimizations
+  will-change: transform, background, box-shadow;
+  transform: translateZ(0);
+
+  &:hover:not(:disabled) {
+    background: color.adjust(#6d28d9, $lightness: -8%);
+    transform: translateZ(0) translateY(-2px);
+    box-shadow: 0 4px 15px rgba(109, 40, 217, 0.3);
+  }
+
+  &:active {
+    transform: translateZ(0) translateY(-1px);
+  }
+
+  &:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: translateZ(0);
+  }
+
+  @media (max-width: 768px) {
+    padding: 10px 16px;
+    min-width: 80px;
+    font-size: 0.75rem;
+  }
+
+  @media (max-width: 480px) {
+    padding: 8px 12px;
+    min-width: 60px;
+    font-size: 0.7rem;
+  }
+}
+
+// Mobile-first responsive layout
+@media (max-width: 320px) {
+  .comparison-table {
+    overflow-x: auto;
+  }
+
+  .comparison-header,
+  .comparison-row,
+  .comparison-actions {
+    min-width: 600px;
+  }
+
+  .comparison-container {
+    padding: 8px;
+
+    &::-webkit-scrollbar {
+      height: 6px;
+
+      &-track {
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 3px;
+      }
+
+      &-thumb {
+        background: #6d28d9;
+        border-radius: 3px;
+
+        &:hover {
+          background: color.adjust(#6d28d9, $lightness: -10%);
+        }
+      }
+    }
+  }
+}
+
+// Print styles
+@media print {
+  .comparison-container {
+    page-break-inside: avoid;
+
+    .comparison-button {
+      display: none;
+    }
+
+    .comparison-icon {
+      box-shadow: none;
+    }
+  }
+}
+
+// High contrast mode support
+@media (prefers-contrast: high) {
+  .comparison-icon {
+    &.check {
+      background: #00aa00;
+      border: 2px solid #ffffff;
+    }
+
+    &.cross {
+      background: #cc0000;
+      border: 2px solid #ffffff;
+    }
+  }
+}
+
+// Reduced motion support
+@media (prefers-reduced-motion: reduce) {
+  .comparison-icon,
+  .comparison-button {
+    transition: none;
+
+    &:hover {
+      transform: none;
+    }
+  }
+
+  .comparison-row {
+    transition: none;
+  }
+}
+
+.comparison-contact {
+  margin-top: 0; // Remove individual margins, rely on parent gap
+  margin-bottom: 0;
+  text-align: center;
+}
