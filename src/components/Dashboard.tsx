@@ -1,12 +1,19 @@
-import React from 'react';
-import { useResponsive } from '../hooks/useResponsive';
-import '../styles/main.scss';
+import React from "react";
+import { useResponsive } from "../hooks/useResponsive";
+import "../styles/main.scss";
 
 const VideoSection: React.FC = () => {
   return (
     <div className="dashboard-results-section">
       <div className="video-container">
-        <video src="./vid1.webm" className="soccer-video" autoPlay loop muted playsInline />
+        <video
+          src="./vid1.webm"
+          className="soccer-video"
+          autoPlay
+          loop
+          muted
+          playsInline
+        />
       </div>
 
       <div className="action-buttons">
@@ -18,7 +25,10 @@ const VideoSection: React.FC = () => {
         >
           Data & Tech Talent: Contribute
         </a>
-        <a href="mailto:mohammad@trilemmacapital.com" className="action-button contact-button">
+        <a
+          href="mailto:team@hypertrial.ai"
+          className="action-button contact-button"
+        >
           Clubs & Academies: Contact
         </a>
       </div>
@@ -28,16 +38,17 @@ const VideoSection: React.FC = () => {
 
 // Main Dashboard component
 const Dashboard: React.FC = () => {
-  const { isTinyMobile, isSmallMobile, isMobile, isTablet, isDesktopSmall } = useResponsive();
+  const { isTinyMobile, isSmallMobile, isMobile, isTablet, isDesktopSmall } =
+    useResponsive();
 
   // Dynamic container class based on screen size
   const getContainerClass = () => {
-    if (isTinyMobile) return 'home-container home-container-tiny';
-    if (isSmallMobile) return 'home-container home-container-small';
-    if (isMobile) return 'home-container home-container-mobile';
-    if (isTablet) return 'home-container home-container-tablet';
-    if (isDesktopSmall) return 'home-container home-container-desktop-small';
-    return 'home-container';
+    if (isTinyMobile) return "home-container home-container-tiny";
+    if (isSmallMobile) return "home-container home-container-small";
+    if (isMobile) return "home-container home-container-mobile";
+    if (isTablet) return "home-container home-container-tablet";
+    if (isDesktopSmall) return "home-container home-container-desktop-small";
+    return "home-container";
   };
 
   const containerClass = getContainerClass();
@@ -51,10 +62,14 @@ const Dashboard: React.FC = () => {
           rel="noopener noreferrer"
           className="hypertrial-logo-link"
         >
-          <img src="./hypertrial_logo.png" alt="Hypertrial Logo" className="hypertrial-logo" />
+          <img
+            src="./hypertrial_logo.png"
+            alt="Hypertrial Logo"
+            className="hypertrial-logo"
+          />
         </a>
         <h1>Soccer Analytics</h1>
-        <p className="subtitle">Elite Analytics for All. Powered by AI Vision.</p>
+        <p className="subtitle">If we can see it, we can analyze it.</p>
       </div>
 
       <div className="dashboard-container-wrapper video-wrapper">

@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
 interface ResponsiveState {
   isTinyMobile: boolean;
@@ -20,7 +20,7 @@ export function useResponsive(): ResponsiveState {
     isDesktopSmall: false,
     isDesktopMedium: false,
     isDesktopLarge: false,
-    screenWidth: typeof window !== 'undefined' ? window.innerWidth : 1200,
+    screenWidth: typeof window !== "undefined" ? window.innerWidth : 1200,
   });
 
   useEffect(() => {
@@ -42,17 +42,17 @@ export function useResponsive(): ResponsiveState {
     checkScreenSize();
 
     // Add event listener with throttling for better performance
-    let timeoutId: number;
+    let timeoutId: ReturnType<typeof setTimeout>;
     const throttledCheckScreenSize = () => {
       clearTimeout(timeoutId);
       timeoutId = setTimeout(checkScreenSize, 100);
     };
 
-    window.addEventListener('resize', throttledCheckScreenSize);
+    window.addEventListener("resize", throttledCheckScreenSize);
 
     // Cleanup
     return () => {
-      window.removeEventListener('resize', throttledCheckScreenSize);
+      window.removeEventListener("resize", throttledCheckScreenSize);
       clearTimeout(timeoutId);
     };
   }, []);
