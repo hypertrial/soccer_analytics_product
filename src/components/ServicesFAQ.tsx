@@ -19,10 +19,8 @@ const FAQ_DATA: FAQItem[] = [
           <strong>Per minute of soccer video analysis</strong> is the default
           measure of how we charge for our services. For example, an analysis of
           a 90-minute soccer match under the Bronze Plan would cost exactly $90
-          USD. We only charge for game or training footage; we do not charge for
-          breaks such as half-time or pre-game warm-ups. This fee structure
-          favours our clients, as it does not take into account the amount of
-          time we spend on the analysis.
+          USD. We only charge for the duration of the game or training footage;
+          we do not charge for breaks such as half-time or pre-game warm-ups.
         </p>
       </>
     ),

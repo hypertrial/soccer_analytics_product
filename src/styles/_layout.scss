@@ -2,60 +2,60 @@
 // LAYOUT COMPONENTS - Enhanced for better responsive transitions
 // =============================================================================
 
-@use 'variables' as *;
+@use "variables" as *;
 
 .home-container {
   max-width: 1200px;
   margin: 0 auto;
   padding: $spacing-lg;
   transition: padding 0.3s ease-in-out;
-  
+
   // Remove top padding when page has disclaimer
   &.has-page-disclaimer {
     padding-top: 0;
   }
-  
+
   // Enhanced responsive container classes
   &.home-container-tiny {
     padding: $spacing-xs;
     max-width: 100%;
-    
+
     &.has-page-disclaimer {
       padding-top: 0;
     }
   }
-  
+
   &.home-container-small {
     padding: $spacing-sm;
     max-width: 100%;
-    
+
     &.has-page-disclaimer {
       padding-top: 0;
     }
   }
-  
+
   &.home-container-mobile {
     padding: $spacing-md;
     max-width: 100%;
-    
+
     &.has-page-disclaimer {
       padding-top: 0;
     }
   }
-  
+
   &.home-container-tablet {
     padding: $spacing-md;
     max-width: 1000px;
-    
+
     &.has-page-disclaimer {
       padding-top: 0;
     }
   }
-  
+
   &.home-container-desktop-small {
     padding: $spacing-lg;
     max-width: 1200px;
-    
+
     &.has-page-disclaimer {
       padding-top: 0;
     }
@@ -67,7 +67,7 @@
   grid-template-columns: 2fr 1fr;
   gap: $spacing-lg;
   transition: gap 0.3s ease-in-out;
-  
+
   @media (max-width: $tablet) {
     grid-template-columns: 1fr;
     gap: $spacing-md;
@@ -77,31 +77,31 @@
 .resources-title {
   text-align: center;
   margin-bottom: $spacing-sm;
-  
+
   .hypertrial-logo-link {
     display: block;
     margin: 0 auto $spacing-md auto;
     width: fit-content;
     transition: transform 0.3s ease-in-out;
-    
+
     &:hover {
       transform: scale(1.1);
     }
   }
-  
+
   .hypertrial-logo {
     height: 40px;
     display: block;
     transition: height 0.3s ease-in-out;
   }
-  
+
   h1 {
     font-size: 3.2rem;
     color: $white;
     margin-bottom: $spacing-xs;
     transition: font-size 0.3s ease-in-out;
   }
-  
+
   .subtitle {
     font-size: 1.3rem;
     color: $white;
@@ -110,7 +110,7 @@
     font-weight: 400;
     transition: font-size 0.3s ease-in-out;
   }
-  
+
   p {
     font-size: 1.2rem;
     color: $white;
@@ -121,12 +121,12 @@
 // Dashboard container wrapper improvements
 .dashboard-container-wrapper {
   transition: all 0.3s ease-in-out;
-  
+
   // Responsive margin adjustments
   @media (max-width: $mobile) {
     margin: 0 #{-$spacing-sm};
   }
-  
+
   @media (max-width: $tiny-mobile) {
     margin: 0 #{-$spacing-xs};
   }
@@ -140,7 +140,7 @@
 .performance-metric-compact {
   .performance-box-small {
     transition: all 0.3s ease-in-out;
-    
+
     // Better responsive scaling
     @media (max-width: $tiny-mobile) {
       margin: 0 auto;
@@ -148,7 +148,7 @@
       min-width: 280px;
       max-width: 400px;
     }
-    
+
     @media (min-width: #{$tiny-mobile + 1px}) and (max-width: $mobile) {
       margin: 0 auto;
       width: auto;
@@ -156,4 +156,28 @@
       max-width: 500px;
     }
   }
-} 
+}
+
+// Footer section - identical styling to header
+.footer-section {
+  text-align: center;
+  margin-top: $spacing-lg;
+  padding: $spacing-lg 0;
+
+  .hypertrial-logo-link {
+    display: block;
+    margin: 0 auto;
+    width: fit-content;
+    transition: transform 0.3s ease-in-out;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  .hypertrial-logo {
+    height: 40px;
+    display: block;
+    transition: height 0.3s ease-in-out;
+  }
+}

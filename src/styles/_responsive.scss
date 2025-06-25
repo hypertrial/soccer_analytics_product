@@ -2,52 +2,62 @@
 // RESPONSIVE DESIGN - Enhanced for better transitions
 // =============================================================================
 
-@use 'variables' as *;
+@use "variables" as *;
 
 // Enhanced responsive breakpoints for better scaling
 @media (max-width: $tiny-mobile) {
   .home-container {
     padding: $spacing-xs;
   }
-  
+
   .resources-title {
     h1 {
-      font-size: 2rem;
+      font-size: 2.2rem;
     }
-    
+
     .subtitle {
-      font-size: 0.95rem;
+      font-size: 1rem;
     }
-    
+
     p {
       font-size: 1rem;
     }
-    
+
     .hypertrial-logo-link:hover {
       transform: scale(1.1);
     }
-    
+
     .hypertrial-logo {
       height: 30px;
     }
   }
-  
+
+  .footer-section {
+    .hypertrial-logo-link:hover {
+      transform: scale(1.1);
+    }
+
+    .hypertrial-logo {
+      height: 30px;
+    }
+  }
+
   .dashboard-container {
     padding: $spacing-sm;
   }
-  
+
   .performance-metric-compact .performance-box-small {
     min-width: 280px;
     padding: $spacing-sm;
-    
+
     .metric-value-compact .percentage-small {
       font-size: 1.4rem;
     }
   }
-  
+
   .chart-container-full {
     padding: $spacing-sm;
-    
+
     canvas {
       max-height: 250px !important;
     }
@@ -58,51 +68,62 @@
   .home-container {
     padding: $spacing-sm;
   }
-  
+
   .resources-title {
     h1 {
       font-size: 2.5rem;
     }
-    
+
     .subtitle {
       font-size: 1.1rem;
     }
-    
+
     p {
       font-size: 1.1rem;
     }
-    
+
     .hypertrial-logo-link:hover {
       transform: scale(1.1);
     }
-    
+
     .hypertrial-logo {
       height: 35px;
     }
   }
-  
+
+  .footer-section {
+    .hypertrial-logo-link:hover {
+      transform: scale(1.1);
+    }
+
+    .hypertrial-logo {
+      height: 35px;
+    }
+  }
+
   .dashboard-container {
     padding: $spacing-md;
   }
-  
+
   .performance-metric-compact .performance-box-small {
     min-width: 350px;
-    
+
     .metric-value-compact .percentage-small {
       font-size: 1.6rem;
     }
   }
-  
+
   .chart-container-full {
     canvas {
       max-height: 350px !important;
     }
   }
-  
+
   .results-table {
     font-size: 0.85rem;
-    
-    th, td {
+
+    th,
+    td {
       padding: 0.6rem;
     }
   }
@@ -112,37 +133,51 @@
   .home-container {
     padding: $spacing-md;
   }
-  
+
   .resources-title {
     h1 {
       font-size: 2.8rem;
     }
-    
+
     .subtitle {
       font-size: 1.15rem;
     }
-    
+
     p {
       font-size: 1.15rem;
     }
-    
+
     .hypertrial-logo-link:hover {
       transform: scale(1.1);
     }
-    
+
     .hypertrial-logo {
       height: 38px;
     }
   }
-  
+
+  .footer-section {
+    .hypertrial-logo-link:hover {
+      transform: scale(1.1);
+    }
+
+    .hypertrial-logo {
+      height: 38px;
+    }
+  }
+
+  .dashboard-container {
+    padding: $spacing-md;
+  }
+
   .performance-metric-compact .performance-box-small {
     min-width: 400px;
-    
+
     .metric-value-compact .percentage-small {
       font-size: 1.7rem;
     }
   }
-  
+
   .chart-container-full {
     canvas {
       max-height: 400px !important;
@@ -154,33 +189,43 @@
   .home-container {
     padding: $spacing-lg;
   }
-  
+
   .resources-title {
     h1 {
       font-size: 3rem;
     }
-    
+
     .subtitle {
       font-size: 1.2rem;
     }
-    
+
     .hypertrial-logo-link:hover {
       transform: scale(1.1);
     }
-    
+
     .hypertrial-logo {
       height: 38px;
     }
   }
-  
+
+  .footer-section {
+    .hypertrial-logo-link:hover {
+      transform: scale(1.1);
+    }
+
+    .hypertrial-logo {
+      height: 38px;
+    }
+  }
+
   .performance-metric-compact .performance-box-small {
     min-width: 450px;
-    
+
     .metric-value-compact .percentage-small {
       font-size: 1.75rem;
     }
   }
-  
+
   .chart-container-full {
     canvas {
       max-height: 450px !important;
@@ -192,36 +237,46 @@
   .home-container {
     padding: $spacing-lg;
   }
-  
+
   .resources-title {
     h1 {
       font-size: 3.1rem;
     }
-    
+
     .subtitle {
       font-size: 1.25rem;
     }
-    
+
     .hypertrial-logo-link:hover {
       transform: scale(1.1);
     }
-    
+
     .hypertrial-logo {
-      height: 40px;
+      height: 38px;
     }
   }
-  
+
+  .footer-section {
+    .hypertrial-logo-link:hover {
+      transform: scale(1.1);
+    }
+
+    .hypertrial-logo {
+      height: 38px;
+    }
+  }
+
   .performance-metric-compact .performance-box-small {
-    min-width: 500px;
-    
+    min-width: 450px;
+
     .metric-value-compact .percentage-small {
-      font-size: 1.8rem;
+      font-size: 1.75rem;
     }
   }
-  
+
   .chart-container-full {
     canvas {
-      max-height: 500px !important;
+      max-height: 450px !important;
     }
   }
 }
@@ -230,34 +285,44 @@
   .home-container {
     padding: $spacing-xl;
   }
-  
+
   .resources-title {
     h1 {
       font-size: 3.2rem;
     }
-    
+
     .subtitle {
       font-size: 1.3rem;
     }
-    
+
     .hypertrial-logo-link:hover {
       transform: scale(1.1);
     }
-    
+
     .hypertrial-logo {
       height: 40px;
     }
   }
-  
+
+  .footer-section {
+    .hypertrial-logo-link:hover {
+      transform: scale(1.1);
+    }
+
+    .hypertrial-logo {
+      height: 40px;
+    }
+  }
+
   .performance-metric-compact .performance-box-small {
     min-width: 550px;
     padding: $spacing-lg;
-    
+
     .metric-value-compact .percentage-small {
       font-size: 1.9rem;
     }
   }
-  
+
   .chart-container-full {
     canvas {
       max-height: 550px !important;
@@ -270,6 +335,7 @@
 .resources-title h1,
 .resources-title p,
 .hypertrial-logo,
+.footer-section .hypertrial-logo,
 .performance-metric-compact .performance-box-small,
 .chart-container-full canvas {
   transition: all 0.3s ease-in-out;
@@ -280,4 +346,4 @@
   canvas {
     transition: max-height 0.3s ease-in-out !important;
   }
-} 
+}

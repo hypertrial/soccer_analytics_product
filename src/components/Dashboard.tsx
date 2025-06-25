@@ -21,6 +21,23 @@ const VideoSection: React.FC = () => {
   );
 };
 
+const UniversityAffiliations: React.FC = () => {
+  return (
+    <div className="university-affiliations-section">
+      <h2>University Affiliations</h2>
+      <p>Discover our partnerships with top academic institutions.</p>
+      <a
+        href="https://www.hypertrial.ai/partners"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="partners-link"
+      >
+        View Our University Partners
+      </a>
+    </div>
+  );
+};
+
 // Main Dashboard component
 const Dashboard: React.FC = () => {
   const { isTinyMobile, isSmallMobile, isMobile, isTablet, isDesktopSmall } =
@@ -66,11 +83,27 @@ const Dashboard: React.FC = () => {
                 <ComparisonSection />
                 <InstructorsSection />
                 <ServicesFAQ />
+                <UniversityAffiliations />
               </div>
             </div>
           </div>
         </div>
       </div>
+
+      <footer className="footer-section">
+        <a
+          href="https://hypertrial.ai"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hypertrial-logo-link"
+        >
+          <img
+            src="./hypertrial_logo.png"
+            alt="Hypertrial Logo"
+            className="hypertrial-logo"
+          />
+        </a>
+      </footer>
     </div>
   );
 };
