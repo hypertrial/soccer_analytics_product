@@ -180,6 +180,10 @@
   transform: translateY(
     -85px
   ) !important; // Pull the entire services content up by 15px
+
+  @media (max-width: $mobile) {
+    transform: translateY(-65px) !important; // Less translation on mobile
+  }
 }
 
 // Page-wide disclaimer banner

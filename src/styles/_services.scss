@@ -686,6 +686,7 @@
       font-weight: 600;
       font-size: 0.875rem;
       transition: all 0.3s ease;
+      margin-bottom: 20px;
       // Performance optimizations
       will-change: transform, background;
       transform: translateZ(0);
@@ -699,6 +700,95 @@
       @media (max-width: 768px) {
         font-size: 0.8rem;
         padding: 6px 12px;
+        margin-bottom: 16px;
+      }
+    }
+
+    .instructor-expertise {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 0;
+      text-align: left;
+
+      @media (max-width: 768px) {
+        gap: 0.75rem;
+      }
+
+      @media (max-width: 480px) {
+        gap: 0.5rem;
+      }
+
+      .expertise-section {
+        width: 100%;
+
+        h4 {
+          color: var(--brand-primary);
+          font-size: 0.8rem;
+          font-weight: 600;
+          margin: 0 0 8px 0;
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
+
+          @media (max-width: 768px) {
+            font-size: 0.75rem;
+            margin-bottom: 6px;
+          }
+
+          @media (max-width: 480px) {
+            font-size: 0.7rem;
+            margin-bottom: 4px;
+          }
+        }
+
+        ul {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+
+          li {
+            color: var(--text-primary);
+            font-size: 0.65rem;
+            line-height: 1.4;
+            margin-bottom: 4px;
+            padding-left: 12px;
+            position: relative;
+            opacity: 0.9;
+
+            @media (max-width: 768px) {
+              font-size: 0.6rem;
+              padding-left: 10px;
+              margin-bottom: 3px;
+            }
+
+            @media (max-width: 480px) {
+              font-size: 0.55rem;
+              padding-left: 8px;
+              margin-bottom: 2px;
+            }
+
+            &::before {
+              content: "•";
+              color: var(--brand-primary);
+              font-size: 0.8rem;
+              position: absolute;
+              left: 0;
+              top: 0;
+
+              @media (max-width: 768px) {
+                font-size: 0.75rem;
+              }
+
+              @media (max-width: 480px) {
+                font-size: 0.7rem;
+              }
+            }
+
+            &:last-child {
+              margin-bottom: 0;
+            }
+          }
+        }
       }
     }
   }

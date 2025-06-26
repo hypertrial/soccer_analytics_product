@@ -17,6 +17,8 @@ interface Instructor {
   image: string;
   alt: string;
   linkedinUrl: string;
+  soccer: string[];
+  ai: string[];
 }
 
 // Constants
@@ -131,6 +133,16 @@ const INSTRUCTORS: Instructor[] = [
     image: "./mo.png",
     alt: "Mohammad Ashkani",
     linkedinUrl: "https://www.linkedin.com/in/mohammadashkani/",
+    soccer: [
+      "Played across BC youth leagues; three-time BC Provincials Champion",
+      "Trained with Langara and UBC varsity teams",
+      "Competed in VMSL Division 1 and Premier Men's Leagues",
+    ],
+    ai: [
+      "Economics and Mathematics BA @ University of British Columbia (UBC)",
+      "7+ years of experience in Machine Learning",
+      "Deployed products that generated $13M+ annual savings for institutional clients",
+    ],
   },
   {
     name: "Matt Faltyn",
@@ -138,6 +150,16 @@ const INSTRUCTORS: Instructor[] = [
     image: "./matt.png",
     alt: "Matt Faltyn",
     linkedinUrl: "https://www.linkedin.com/in/mattfaltyn/",
+    soccer: [
+      "Played competitively across Ontario youth leagues",
+      "Two-time Ontario Youth Soccer League Champion",
+      "Two-time Ontario Cup Finalist",
+    ],
+    ai: [
+      "PhD research in Machine Learning; Applied Math MSc from UBC",
+      "18+ publications with 3,000+ citations; $350k+ in research funding",
+      "Awarded 2024 Vanier, CIHR, and UBC 4YF; top 1% of Canadian PhD students (2023–2024)",
+    ],
   },
 ];
 
@@ -365,6 +387,26 @@ const InstructorCard: React.FC<{ instructor: Instructor }> = ({
       >
         LinkedIn
       </a>
+
+      <div className="instructor-expertise">
+        <div className="expertise-section">
+          <h4>AI</h4>
+          <ul>
+            {instructor.ai.map((item, index) => (
+              <li key={index}>{item}</li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="expertise-section">
+          <h4>Soccer</h4>
+          <ul>
+            {instructor.soccer.map((item, index) => (
+              <li key={index}>{item}</li>
+            ))}
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 );
