@@ -15,6 +15,12 @@ const VideoSection: React.FC = () => {
           loop
           muted
           playsInline
+          preload="metadata"
+          disablePictureInPicture
+          controlsList="nodownload"
+          onError={(e) => {
+            console.warn("Video loading error:", e);
+          }}
         />
       </div>
     </div>
@@ -68,6 +74,8 @@ const Dashboard: React.FC = () => {
             src="./hypertrial_logo.png"
             alt="Hypertrial Logo"
             className="hypertrial-logo"
+            loading="lazy"
+            decoding="async"
           />
         </a>
         <h1>Soccer Analytics</h1>
@@ -101,6 +109,8 @@ const Dashboard: React.FC = () => {
             src="./hypertrial_logo.png"
             alt="Hypertrial Logo"
             className="hypertrial-logo"
+            loading="lazy"
+            decoding="async"
           />
         </a>
       </footer>
