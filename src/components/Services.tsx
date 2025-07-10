@@ -141,7 +141,7 @@ const INSTRUCTORS: Instructor[] = [
     ai: [
       "Economics and Mathematics BA @ University of British Columbia (UBC)",
       "7+ years of experience in Machine Learning",
-      "Deployed products that generated $13M+ annual savings for institutional clients",
+      "Deployed products that generated $13M+ annual savings for institutions",
     ],
   },
   {
@@ -158,7 +158,8 @@ const INSTRUCTORS: Instructor[] = [
     ai: [
       "PhD research in Machine Learning; Applied Math MSc from UBC",
       "18+ publications with 3,000+ citations; $350k+ in research funding",
-      "Awarded 2024 Vanier, CIHR, and UBC 4YF; top 1% of Canadian PhD students (2023–2024)",
+      "First researcher to automate coding of a behaviorial development experiment with computer vision deep learning (2019)",
+      "Awarded 2024 Vanier, CIHR, and UBC 4YF",
     ],
   },
 ];

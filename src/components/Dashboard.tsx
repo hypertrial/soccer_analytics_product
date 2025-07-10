@@ -30,8 +30,7 @@ const VideoSection: React.FC = () => {
 const UniversityAffiliations: React.FC = () => {
   return (
     <div className="university-affiliations-section">
-      <h2>University Affiliations</h2>
-      <p>Discover our partnerships with top academic institutions.</p>
+      <p>Powered by our partnerships with top academic institutions.</p>
       <a
         href="https://www.hypertrial.ai/partners"
         target="_blank"
@@ -78,7 +77,7 @@ const Dashboard: React.FC = () => {
             decoding="async"
           />
         </a>
-        <h1>Soccer Analytics</h1>
+        <h1>Soccer Analytics — Beta</h1>
         <p className="subtitle">If it's Visible, it's Measurable</p>
       </div>
 
@@ -86,12 +85,12 @@ const Dashboard: React.FC = () => {
         <div className="dashboard-container video-container-custom">
           <div className="dashboard-content">
             <VideoSection />
+            <UniversityAffiliations />
             <div className="services-container">
               <div className="services-content">
                 <ComparisonSection />
                 <InstructorsSection />
                 <ServicesFAQ />
-                <UniversityAffiliations />
               </div>
             </div>
           </div>
